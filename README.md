@@ -5,7 +5,26 @@
 
 ---
 
-## 📌 Visão Geral do Projeto
+## 🎓 Apresentação do Projeto & Contexto Educacional
+
+> [!NOTE]
+> **PROJETO ORIENTADO AO APRENDIZADO**  
+> Este projeto foi concebido e implementado estritamente como um **exercício prático de aprendizado** durante a **Imersão em Engenharia de Software com IA**, promovida pela **ALURA** em parceria com o **Google**.
+
+O objetivo primordial desta aplicação é exercitar as competências centrais da moderna Engenharia de Software potencializada por Inteligência Artificial Generativa. Ao longo da imersão, exploramos como os modelos fundacionais de IA (como a família **Gemini**) transformam as etapas essenciais do ciclo de vida de desenvolvimento de software (SDLC):
+
+1. **Exploração e Ideação:** Como formular perguntas abertas para descobrir oportunidades e produtos no *Google AI Studio Playground*.
+2. **Engenharia de Requisitos:** Como utilizar a persona de especialista em produto para elicitar requisitos funcionais, não funcionais e critérios de teste, aplicando o princípio de **"Não escreva código ainda"**.
+3. **Modelagem & Arquitetura Limpa:** Decomposição modular em componentes React, tipagem rígida com TypeScript e isolamento de persistência através do padrão Service.
+4. **Implementação & Geração Assistida:** Construção da Single Page Application com React 19, TypeScript e Tailwind CSS v4.
+5. **Entrega Serverless em Nuvem:** Publicação na infraestrutura gerenciada do **Google Cloud Platform (GCP)** com **Google Cloud Run**.
+
+🔗 **Ambiente em Produção (Google AI Studio / Cloud Run):**  
+👉 **[https://studyflow-3881.ai.studio/](https://studyflow-3881.ai.studio/)**
+
+---
+
+## 📌 Visão Geral do Produto
 
 O **StudyFlow** é uma aplicação web focada em auxiliar estudantes iniciantes a organizarem seus objetivos de estudo, combaterem a procrastinação e acompanharem sua evolução acadêmica de forma acolhedora, visual e intuitiva.
 
@@ -118,6 +137,77 @@ A implementação materializou o planejamento através da geração assistida po
 3. **StorageService**: Intermediário síncrono que serializa objetos em JSON e os persiste sob a chave `'studyflow_objectives_v1'`.
 4. **Disco Local (localStorage)**: Garante que mesmo sem sinal de internet ou após recarregar o navegador (F5), todos os dados do aluno permaneçam preservados.
 
+---
+
+### 3.1 Infraestrutura Serverless no GCP & Arquitetura de Deploy
+
+A aplicação StudyFlow foi concebida e publicada na infraestrutura do **Google Cloud Platform (GCP)** através da integração nativa com o **Google AI Studio** ([https://studyflow-3881.ai.studio/](https://studyflow-3881.ai.studio/)), associada ao projeto GCP da imersão:
+- **Projeto Google Cloud (Project ID):** `agentic-ai-eng-soft-alura`
+- **Ambiente de Hospedagem:** Google Cloud Run (Serverless Container Platform)
+- **Domínio Ativo:** `https://studyflow-3881.ai.studio/` (roteado para instâncias `*.run.app`)
+
+#### 1. Como a aplicação é servida (O papel do Google Cloud Run)
+- **URL gerenciada pelo Cloud Run (`*.run.app`):** O Cloud Run é o serviço serverless do Google Cloud Platform que gerencia contêineres sem necessidade de provisionar ou gerenciar servidores físicos. Ele escala sob demanda (inclusive para 0 instâncias quando não há requisições, eliminando custos ociosos).
+- **Os arquivos estão armazenados no Cloud Storage?**  
+  **Não diretamente como um site estático do Cloud Storage.**  
+  O Cloud Run executa um contêiner Linux leve contendo Node.js e o runtime do Vite/Express. Os arquivos compilados do projeto (`.tsx`, `.css`, `index.html`) residem diretamente dentro do sistema de arquivos virtual desse contêiner virtual.  
+  Quando você acessa a URL, o Cloud Run processa a requisição HTTP e entrega o pacote frontend (HTML, JavaScript compilado e Tailwind CSS) para o navegador do estudante, onde o React assume o controle da interface.
+
+#### 2. Onde ficam os objetivos de estudo que você cadastra? (Isolamento de Dados)
+> [!IMPORTANT]
+> **Os dados NÃO estão no Google Cloud Platform (GCP).**  
+> Nesta primeira versão da aplicação (MVP), os objetivos de estudo criados:
+> - ❌ **Não vão para o Cloud Run;**
+> - ❌ **Não vão para o Cloud Storage;**
+> - ❌ **Não vão para nenhum banco de dados em nuvem** (como Cloud Firestore, Cloud SQL ou Bigtable).
+
+**Eles ficam armazenados exclusivamente no `localStorage` do seu navegador:**
+- O `localStorage` é uma memória interna e persistente do próprio navegador web (armazenamento local gravado no disco físico do computador ou celular do estudante).
+- **Por que os dados continuam lá após o F5?**  
+  Se você atualizar a página (F5 ou recarregar), os dados permanecem visíveis porque o navegador lê diretamente do disco da sua própria máquina via `StorageService.getAll()`.
+- **Por que os dados não aparecem em outro dispositivo?**  
+  Se você abrir a mesma URL no celular, em outro navegador (exemplo: Mozilla Firefox em vez do Google Chrome) ou em uma aba anônima, os objetivos não estarão lá. O `localStorage` é estritamente isolado por dispositivo, navegador e domínio de navegação.
+
+#### 3. Como realizar o Deploy dentro do Google Cloud Platform (GCP)
+
+Baseado na arquitetura serverless concebida junto ao **Google AI Studio**, o deploy pode ser realizado por duas vias:
+
+##### Via A: Deploy Integrado via Google AI Studio (Fluxo Oficial do Estudo)
+1. No ambiente do **Google AI Studio** (`https://studyflow-3881.ai.studio/`), acesse a aplicação construída via *New App*.
+2. O ambiente AI Studio já se conecta ao projeto GCP configurado (`agentic-ai-eng-soft-alura`).
+3. Ao acionar o botão de deploy, a plataforma executa o build dos arquivos Vite/TypeScript, empacota a imagem de contêiner serverless e a publica diretamente no Google Cloud Run, gerando a URL segura HTTPS pública.
+
+##### Via B: Deploy Manual / CI-CD utilizando o Google Cloud SDK (`gcloud CLI`)
+Caso deseje realizar o deploy a partir do código-fonte local utilizando o SDK oficial do Google Cloud:
+
+1. **Autenticar na sua conta Google:**
+   ```bash
+   gcloud auth login
+   ```
+
+2. **Definir o projeto GCP ativo:**
+   ```bash
+   gcloud config set project agentic-ai-eng-soft-alura
+   ```
+
+3. **Habilitar as APIs necessárias no projeto GCP:**
+   ```bash
+   gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com
+   ```
+
+4. **Executar o build e deploy no Cloud Run:**
+   ```bash
+   gcloud run deploy studyflow \
+     --source . \
+     --region us-central1 \
+     --platform managed \
+     --allow-unauthenticated \
+     --port 3000
+   ```
+   *Explicação:* O Google Cloud Run aciona o Cloud Build sob o capô, utilizando Buildpacks para identificar o projeto Node.js/Vite, compilar os assets estáticos e expor o serviço em porta gerenciada com certificado TLS/SSL automático.
+
+---
+
 #### 📂 Estrutura do Código-Fonte:
 ```bash
 studyflow-imersao-dev-ai-google-engsoft/
@@ -186,7 +276,8 @@ A fase de validação fecha o ciclo de engenharia, verificando se cada critério
 - **Estilização & Design System:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Ícones Modernos:** [Lucide React](https://lucide.dev/)
 - **Inteligência Artificial:** [Google AI Studio](https://aistudio.google.com/) (Gemini Flash & Pro)
-- **Hospedagem & Infraestrutura:** [Google Cloud Run](https://cloud.google.com/run) (Serverless Container)
+- **Hospedagem & Infraestrutura:** [Google Cloud Run](https://cloud.google.com/run) (Serverless Container Platform)
+- **Projeto Google Cloud:** `agentic-ai-eng-soft-alura`
 
 ---
 
