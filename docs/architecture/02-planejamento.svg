@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #64748b; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 700; fill: #1e293b; }
+      .badge-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+      .comp-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #1e293b; }
+      .comp-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; fill: #64748b; }
+      .code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; }
+      .footer-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    </style>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <filter id="shadow2" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="960" height="520" rx="16" fill="url(#bgGrad2)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Header -->
+  <g transform="translate(40, 34)">
+    <rect x="0" y="0" width="36" height="36" rx="10" fill="#0284c7" />
+    <path d="M11 14H25M11 18H25M11 22H19" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="48" y="20" class="title">2. Arquitetura da Fase de Planejamento</text>
+    <text x="48" y="36" class="subtitle">Decomposição Modular, Modelagem de Tipos e Contratos Técnicos antes da Codificação</text>
+  </g>
+
+  <!-- Grid Layout: 4 Architectural Pillars -->
+
+  <!-- PILAR 1: Requisitos de UX/Interface -->
+  <g transform="translate(40, 90)" filter="url(#shadow2)">
+    <rect width="210" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="105" height="22" rx="6" fill="#e0f2fe"/>
+    <text x="22" y="29" class="badge-text" fill="#0369a1">PILAR 1 • UX/UI</text>
+    <text x="14" y="58" class="card-title">Diretrizes de Interface</text>
+
+    <g transform="translate(14, 76)">
+      <!-- Box 1 -->
+      <rect x="0" y="0" width="182" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="comp-title">Acolhedor &amp; Simples</text>
+      <text x="10" y="34" class="comp-desc">Foco na redução de ansiedade</text>
+      <text x="10" y="46" class="comp-desc">para estudantes iniciantes.</text>
+
+      <!-- Box 2 -->
+      <rect x="0" y="60" width="182" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="78" class="comp-title">Linguagem pt-BR</text>
+      <text x="10" y="94" class="comp-desc">Labels amigáveis: Em andamento,</text>
+      <text x="10" y="106" class="comp-desc">Não iniciado e Concluído.</text>
+
+      <!-- Box 3 -->
+      <rect x="0" y="120" width="182" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="138" class="comp-title">Responsividade Total</text>
+      <text x="10" y="154" class="comp-desc">Adaptável para celulares,</text>
+      <text x="10" y="166" class="comp-desc">tablets e telas desktop.</text>
+
+      <!-- Box 4 -->
+      <rect x="0" y="180" width="182" height="74" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="10" y="198" class="comp-title" fill="#166534">Prevenção de Erros</text>
+      <text x="10" y="214" class="comp-desc" fill="#15803d">Confirmação obrigatória antes</text>
+      <text x="10" y="228" class="comp-desc" fill="#15803d">de excluir qualquer objetivo</text>
+      <text x="10" y="242" class="comp-desc" fill="#15803d">(sem perdas acidentais).</text>
+    </g>
+  </g>
+
+  <!-- PILAR 2: Decomposição de Componentes -->
+  <g transform="translate(262, 90)" filter="url(#shadow2)">
+    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="128" height="22" rx="6" fill="#ede9fe"/>
+    <text x="22" y="29" class="badge-text" fill="#6d28d9">PILAR 2 • FRONTEND</text>
+    <text x="14" y="58" class="card-title">Módulos React</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="188" height="38" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="16" class="code-font" fill="#6d28d9">&lt;Header /&gt;</text>
+      <text x="10" y="30" class="comp-desc">Branding, lema e ação de criar</text>
+
+      <rect x="0" y="44" width="188" height="38" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="60" class="code-font" fill="#6d28d9">&lt;GoalStats /&gt;</text>
+      <text x="10" y="74" class="comp-desc">Métricas, totalizadores e progresso %</text>
+
+      <rect x="0" y="88" width="188" height="38" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="104" class="code-font" fill="#6d28d9">&lt;GoalCard /&gt;</text>
+      <text x="10" y="118" class="comp-desc">Item individual, status e badge prazo</text>
+
+      <rect x="0" y="132" width="188" height="38" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="148" class="code-font" fill="#6d28d9">&lt;GoalFormModal /&gt;</text>
+      <text x="10" y="162" class="comp-desc">Criação e edição com validação</text>
+
+      <rect x="0" y="176" width="188" height="38" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="192" class="code-font" fill="#6d28d9">&lt;ConfirmModal /&gt;</text>
+      <text x="10" y="206" class="comp-desc">Diálogo modal acessível via ESC</text>
+
+      <rect x="0" y="220" width="188" height="34" rx="7" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+      <text x="10" y="235" class="code-font" fill="#6d28d9">&lt;EmptyState /&gt;</text>
+      <text x="10" y="247" class="comp-desc">Zero state com CTA de incentivo</text>
+    </g>
+  </g>
+
+  <!-- PILAR 3: Modelagem de Dados & Tipos -->
+  <g transform="translate(490, 90)" filter="url(#shadow2)">
+    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="128" height="22" rx="6" fill="#e0e7ff"/>
+    <text x="22" y="29" class="badge-text" fill="#4338ca">PILAR 3 • TIPAGEM</text>
+    <text x="14" y="58" class="card-title">Modelos TypeScript</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="188" height="152" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="18" class="code-font" fill="#1e293b">interface StudyObjective {</text>
+      <text x="16" y="36" class="code-font" fill="#6366f1">id: string;</text>
+      <text x="16" y="54" class="code-font" fill="#6366f1">title: string;</text>
+      <text x="16" y="72" class="code-font" fill="#6366f1">description: string;</text>
+      <text x="16" y="90" class="code-font" fill="#6366f1">deadline: string; // YYYY-MM-DD</text>
+      <text x="16" y="108" class="code-font" fill="#6366f1">status: ObjectiveStatus;</text>
+      <text x="16" y="126" class="code-font" fill="#6366f1">createdAt: string;</text>
+      <text x="10" y="144" class="code-font" fill="#1e293b">}</text>
+
+      <rect x="0" y="160" width="188" height="94" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="178" class="code-font" fill="#0f172a">type ObjectiveStatus =</text>
+      <text x="14" y="196" class="code-font" fill="#b45309">| 'nao_iniciado'</text>
+      <text x="14" y="214" class="code-font" fill="#b45309">| 'em_andamento'</text>
+      <text x="14" y="232" class="code-font" fill="#15803d">| 'concluido';</text>
+    </g>
+  </g>
+
+  <!-- PILAR 4: Estratégia de Armazenamento -->
+  <g transform="translate(718, 90)" filter="url(#shadow2)">
+    <rect width="202" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="128" height="22" rx="6" fill="#fef3c7"/>
+    <text x="22" y="29" class="badge-text" fill="#b45309">PILAR 4 • PERSISTÊNCIA</text>
+    <text x="14" y="58" class="card-title">StorageService</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="174" height="66" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+      <text x="10" y="18" class="comp-title" fill="#92400e">Padrão Repository</text>
+      <text x="10" y="34" class="comp-desc" fill="#78350f">Isola todo o acesso a dados</text>
+      <text x="10" y="48" class="comp-desc" fill="#78350f">fora dos componentes visuais.</text>
+
+      <rect x="0" y="74" width="174" height="94" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="code-font" fill="#0369a1">• getAll()</text>
+      <text x="10" y="36" class="code-font" fill="#0369a1">• create(data)</text>
+      <text x="10" y="54" class="code-font" fill="#0369a1">• update(id, data)</text>
+      <text x="10" y="72" class="code-font" fill="#0369a1">• delete(id)</text>
+      <text x="10" y="90" class="code-font" fill="#0369a1">• resetToDefaults()</text>
+
+      <rect x="0" y="176" width="174" height="78" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="18" class="comp-title">Client-Side First</text>
+      <text x="10" y="34" class="comp-desc">Armazena em localStorage.</text>
+      <text x="10" y="48" class="comp-desc">Sem dependência de backend</text>
+      <text x="10" y="62" class="comp-desc">no MVP (privacidade e velocidade).</text>
+    </g>
+  </g>
+
+  <!-- Bottom Banner -->
+  <g transform="translate(40, 458)">
+    <rect width="880" height="42" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="24" cy="21" r="5" fill="#0284c7"/>
+    <text x="38" y="25" class="footer-text">
+      <tspan font-weight="700" fill="#0f172a">Arquitetura Limpa no Frontend:</tspan> Desacoplamento entre Apresentação (React), Domínio (Types) e Infraestrutura (StorageService).
+    </text>
+  </g>
+</svg>

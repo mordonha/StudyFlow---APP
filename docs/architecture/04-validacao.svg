@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #64748b; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 700; fill: #1e293b; }
+      .badge-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+      .val-item { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11.5px; font-weight: 600; fill: #1e293b; }
+      .val-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; fill: #64748b; }
+      .code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; }
+      .footer-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 500; fill: #475569; }
+    </style>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <filter id="shadow4" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="960" height="520" rx="16" fill="url(#bgGrad4)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Header -->
+  <g transform="translate(40, 34)">
+    <rect x="0" y="0" width="36" height="36" rx="10" fill="#10b981" />
+    <path d="M11 18L16 23L25 13" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="48" y="20" class="title">4. Arquitetura da Fase de Validação</text>
+    <text x="48" y="36" class="subtitle">Matriz de Qualidade: Tipagem Estática, Critérios de Aceitação do Prompt 2 &amp; 3 e Resiliência</text>
+  </g>
+
+  <!-- 4 Validation Pillars -->
+
+  <!-- CARD 1: Validação Estática -->
+  <g transform="translate(40, 90)" filter="url(#shadow4)">
+    <rect width="210" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="115" height="22" rx="6" fill="#e0e7ff"/>
+    <text x="22" y="29" class="badge-text" fill="#4338ca">NÍVEL 1 • CÓDIGO</text>
+    <text x="14" y="58" class="card-title">Tipagem Estática</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="182" height="60" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">TypeScript Compiler</text>
+      <text x="10" y="34" class="code-font" fill="#4338ca">npm run lint (tsc)</text>
+      <text x="10" y="50" class="val-desc">Zero erros de compilação.</text>
+
+      <rect x="0" y="68" width="182" height="64" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Integridade de Modelos</text>
+      <text x="10" y="34" class="val-desc">Objetos de estudo com campos</text>
+      <text x="10" y="48" class="val-desc">obrigatórios validados no build.</text>
+
+      <rect x="0" y="140" width="182" height="114" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#166534">Garantias Técnicas</text>
+      <text x="10" y="34" class="val-desc" fill="#15803d">✓ Sem variáveis undefined</text>
+      <text x="10" y="50" class="val-desc" fill="#15803d">✓ Props dos componentes</text>
+      <text x="10" y="64" class="val-desc" fill="#15803d">  estritamente tipadas</text>
+      <text x="10" y="80" class="val-desc" fill="#15803d">✓ Status limitado à união:</text>
+      <text x="10" y="96" class="code-font" fill="#166534">  nao_iniciado | ...</text>
+    </g>
+  </g>
+
+  <!-- CARD 2: Critérios Funcionais -->
+  <g transform="translate(262, 90)" filter="url(#shadow4)">
+    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="130" height="22" rx="6" fill="#fef3c7"/>
+    <text x="22" y="29" class="badge-text" fill="#b45309">NÍVEL 2 • NEGÓCIO</text>
+    <text x="14" y="58" class="card-title">Critérios do Prompt 2</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#92400e">Cadastro de Objetivo</text>
+      <text x="10" y="34" class="val-desc" fill="#78350f">Salva título, descrição, prazo</text>
+      <text x="10" y="46" class="val-desc" fill="#78350f">e status com validação de dados.</text>
+
+      <rect x="0" y="60" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#92400e">Listagem &amp; Métricas</text>
+      <text x="10" y="34" class="val-desc" fill="#78350f">Exibe quantidade exata e</text>
+      <text x="10" y="46" class="val-desc" fill="#78350f">barra de progresso percentual.</text>
+
+      <rect x="0" y="120" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#92400e">Edição Completa</text>
+      <text x="10" y="34" class="val-desc" fill="#78350f">Permite alterar status e dados</text>
+      <text x="10" y="46" class="val-desc" fill="#78350f">preservando histórico do ID.</text>
+
+      <rect x="0" y="180" width="188" height="74" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#991b1b">Exclusão com Confirmação</text>
+      <text x="10" y="34" class="val-desc" fill="#b91c1c">Atende à exigência estrita:</text>
+      <text x="10" y="48" class="val-desc" fill="#b91c1c">"somente após confirmação",</text>
+      <text x="10" y="62" class="val-desc" fill="#b91c1c">evitando exclusões acidentais.</text>
+    </g>
+  </g>
+
+  <!-- CARD 3: Persistência & Resiliência -->
+  <g transform="translate(490, 90)" filter="url(#shadow4)">
+    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="130" height="22" rx="6" fill="#dcfce7"/>
+    <text x="22" y="29" class="badge-text" fill="#15803d">NÍVEL 3 • DADOS</text>
+    <text x="14" y="58" class="card-title">Retenção de Dados</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="188" height="58" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item" fill="#166534">Teste de F5 / Reload</text>
+      <text x="10" y="34" class="val-desc" fill="#15803d">Recarregar a página mantém 100%</text>
+      <text x="10" y="48" class="val-desc" fill="#15803d">dos objetivos salvos no storage.</text>
+
+      <rect x="0" y="66" width="188" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Seed para Novos Estudantes</text>
+      <text x="10" y="34" class="val-desc">Caso storage vazio, injeta 3 metas</text>
+      <text x="10" y="48" class="val-desc">exemplares para onboarding.</text>
+
+      <rect x="0" y="132" width="188" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Tratamento de Exceções</text>
+      <text x="10" y="34" class="val-desc">Try/catch protege contra JSON</text>
+      <text x="10" y="48" class="val-desc">inválido ou storage desabilitado.</text>
+
+      <rect x="0" y="198" width="188" height="56" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">UUID Único</text>
+      <text x="10" y="34" class="val-desc">crypto.randomUUID() previne</text>
+      <text x="10" y="48" class="val-desc">colisões de identificador.</text>
+    </g>
+  </g>
+
+  <!-- CARD 4: Validação de UX & Interface -->
+  <g transform="translate(718, 90)" filter="url(#shadow4)">
+    <rect width="202" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect x="14" y="14" width="128" height="22" rx="6" fill="#f1f5f9"/>
+    <text x="22" y="29" class="badge-text" fill="#334155">NÍVEL 4 • UX/UI</text>
+    <text x="14" y="58" class="card-title">Experiência &amp; Prazos</text>
+
+    <g transform="translate(14, 76)">
+      <rect x="0" y="0" width="174" height="56" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Feedback Visual Toast</text>
+      <text x="10" y="34" class="val-desc">Notificações temporárias de 3s</text>
+      <text x="10" y="48" class="val-desc">para cada ação realizada.</text>
+
+      <rect x="0" y="64" width="174" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Estados Vazios (&lt;EmptyState&gt;)</text>
+      <text x="10" y="34" class="val-desc">Diferenciação: sem objetivos vs</text>
+      <text x="10" y="48" class="val-desc">busca/filtro sem resultados.</text>
+
+      <rect x="0" y="132" width="174" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Indicador Dinâmico Prazo</text>
+      <text x="10" y="34" class="val-desc">Calcula dias restantes ou tag</text>
+      <text x="10" y="48" class="val-desc">vermelha de atraso no card.</text>
+
+      <rect x="0" y="200" width="174" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Acessibilidade Modal</text>
+      <text x="10" y="34" class="val-desc">Fechamento com tecla ESC e</text>
+      <text x="10" y="48" class="val-desc">backdrop com blur.</text>
+    </g>
+  </g>
+
+  <!-- Bottom Banner -->
+  <g transform="translate(40, 458)">
+    <rect width="880" height="42" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+    <circle cx="24" cy="21" r="5" fill="#10b981"/>
+    <text x="38" y="25" class="footer-text">
+      <tspan font-weight="700" fill="#0f172a">Qualidade Garantida:</tspan> 100% dos critérios definidos no Prompt 2 e refinados no Prompt 3 foram testados e validados na entrega final.
+    </text>
+  </g>
+</svg>
