@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 580" width="100%" height="100%">
   <defs>
     <style>
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; }
       .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 13px; fill: #64748b; }
-      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; fill: #1e293b; }
+      .card-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14.5px; font-weight: 700; fill: #1e293b; }
       .badge-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
       .comp-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #1e293b; }
       .comp-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; fill: #64748b; }
-      .code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11.5px; }
+      .code-font { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 11px; }
       .flow-label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #4338ca; }
     </style>
     <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -20,18 +20,18 @@
   </defs>
 
   <!-- Background Canvas -->
-  <rect width="960" height="560" rx="16" fill="url(#bgGrad3)" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect width="960" height="580" rx="16" fill="url(#bgGrad3)" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- Top Header -->
   <g transform="translate(40, 32)">
     <rect x="0" y="0" width="36" height="36" rx="10" fill="#4f46e5" />
     <path d="M11 18L18 11L25 18M18 12V25" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <text x="48" y="20" class="title">3. Arquitetura da Fase de Implementação</text>
-    <text x="48" y="36" class="subtitle">Fluxo de Entrega Serverless e Execução Client-Side no Navegador do Estudante</text>
+    <text x="48" y="20" class="title">3. Arquitetura da Fase de Implementação (StudyFlow + Invert)</text>
+    <text x="48" y="36" class="subtitle">Fluxo de Execução em Runtime: Do Google Cloud Run ao Navegador do Estudante e Storage</text>
   </g>
 
   <!-- CAMADA 1: Google Cloud Run (Top Level) -->
-  <g transform="translate(180, 80)" filter="url(#shadow3)">
+  <g transform="translate(160, 80)" filter="url(#shadow3)">
     <rect width="640" height="88" rx="12" fill="#ffffff" stroke="#818cf8" stroke-width="2"/>
     <rect x="16" y="14" width="130" height="20" rx="5" fill="#e0e7ff"/>
     <text x="24" y="28" class="badge-text" fill="#4338ca">NUVEM GCP • SERVERLESS</text>
@@ -39,7 +39,7 @@
     <!-- Cloud Run Branding & Title -->
     <text x="160" y="28" class="card-title">Google Cloud Run (Container Serverless • Project: agentic-ai-eng-soft-alura)</text>
     <text x="16" y="52" class="comp-desc">
-      Executa contêiner Linux com Node.js/Vite. Os arquivos (.tsx, .css, HTML) residem no disco do contêiner (não no Cloud Storage).
+      Executa contêiner Linux com Node.js/Vite. Os arquivos (.tsx, .css, HTML) residem no contêiner (não no Cloud Storage).
     </text>
     <text x="16" y="70" class="code-font" fill="#4338ca">
       Deploy URL: https://studyflow-3881.ai.studio/ (*.run.app)
@@ -49,87 +49,90 @@
   </g>
 
   <!-- Connector Line 1: Cloud Run -> Browser -->
-  <g transform="translate(480, 160)">
-    <line x1="0" y1="0" x2="0" y2="40" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="4 3"/>
-    <polygon points="-5,38 5,38 0,46" fill="#4f46e5"/>
-    <rect x="18" y="10" width="310" height="22" rx="5" fill="#e0e7ff"/>
-    <text x="26" y="25" class="flow-label">1. Entrega os arquivos estáticos (SPA Bundled)</text>
+  <g transform="translate(480, 168)">
+    <line x1="0" y1="0" x2="0" y2="36" stroke="#6366f1" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <polygon points="-5,34 5,34 0,42" fill="#4f46e5"/>
+    <rect x="18" y="8" width="310" height="22" rx="5" fill="#e0e7ff"/>
+    <text x="26" y="23" class="flow-label">1. Entrega os arquivos estáticos (SPA Bundled)</text>
   </g>
 
   <!-- CAMADA 2: Navegador do Usuário (Mid Level) -->
-  <g transform="translate(60, 210)" filter="url(#shadow3)">
-    <rect width="840" height="200" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <g transform="translate(50, 212)" filter="url(#shadow3)">
+    <rect width="860" height="220" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
     
     <!-- Browser Top Bar -->
-    <rect x="16" y="12" width="145" height="20" rx="5" fill="#f1f5f9"/>
+    <rect x="16" y="12" width="150" height="20" rx="5" fill="#f1f5f9"/>
     <text x="24" y="26" class="badge-text" fill="#475569">NAVEGADOR DO ESTUDANTE</text>
-    <text x="175" y="28" class="card-title">Ambiente de Execução Client-Side (React 19 + TypeScript)</text>
+    <text x="180" y="28" class="card-title">Execução Client-Side no Navegador (React 19 + TypeScript)</text>
 
-    <text x="16" y="50" class="comp-desc">
-      2. O React roda localmente na máquina do estudante com fluxo de estado unidirecional reativo.
-    </text>
-
-    <!-- Inner Components Layout -->
-    <!-- App Root State Box -->
-    <g transform="translate(16, 62)">
-      <rect width="210" height="122" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
-      <rect x="10" y="8" width="90" height="18" rx="4" fill="#ede9fe"/>
-      <text x="15" y="21" class="badge-text" fill="#6d28d9">APP.TSX (ESTADO)</text>
-      <text x="10" y="44" class="code-font" fill="#0f172a">• objectives: State</text>
-      <text x="10" y="62" class="code-font" fill="#0f172a">• searchQuery: string</text>
-      <text x="10" y="80" class="code-font" fill="#0f172a">• filterStatus: Status</text>
-      <text x="10" y="98" class="code-font" fill="#0f172a">• toastFeedback: Toast</text>
+    <!-- Sub-blocos de Execução -->
+    <g transform="translate(16, 48)">
+      <!-- Bloco 1: App Root & Tabs -->
+      <rect width="260" height="154" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="10" y="8" width="125" height="18" rx="4" fill="#ede9fe"/>
+      <text x="15" y="21" class="badge-text" fill="#6d28d9">APP.TSX (ESTADO DUAL)</text>
+      <text x="10" y="44" class="code-font" fill="#0f172a">• activeTab: 'objectives' | 'evolution'</text>
+      <text x="10" y="62" class="code-font" fill="#0f172a">• objectives: StudyObjective[]</text>
+      <text x="10" y="80" class="code-font" fill="#0f172a">• isInvertOpen: boolean</text>
+      <text x="10" y="98" class="code-font" fill="#0f172a">• activeReport: KnowledgeReport</text>
+      <text x="10" y="116" class="code-font" fill="#0f172a">• toastFeedback: Toast</text>
+      <text x="10" y="136" class="comp-desc" fill="#4338ca">→ Orquestra Metas e Laboratório Invert</text>
     </g>
 
-    <!-- UI Components Grid -->
-    <g transform="translate(242, 62)">
-      <rect width="330" height="122" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
-      <rect x="10" y="8" width="125" height="18" rx="4" fill="#e0e7ff"/>
+    <!-- Bloco 2: Subsistemas de Componentes -->
+    <g transform="translate(290, 48)">
+      <rect width="280" height="154" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="10" y="8" width="145" height="18" rx="4" fill="#e0e7ff"/>
       <text x="15" y="21" class="badge-text" fill="#4338ca">COMPONENTES VISUAIS</text>
       
       <g transform="translate(10, 36)">
-        <text x="0" y="12" class="code-font" fill="#475569">• &lt;Header /&gt; (Barra &amp; CTA Novo)</text>
-        <text x="0" y="30" class="code-font" fill="#475569">• &lt;GoalStats /&gt; (Contadores &amp; Barra %)</text>
-        <text x="0" y="48" class="code-font" fill="#475569">• &lt;GoalCard /&gt; (Status, Prazo, Ações)</text>
-        <text x="0" y="66" class="code-font" fill="#475569">• &lt;GoalFormModal /&gt; &amp; &lt;ConfirmModal /&gt;</text>
+        <text x="0" y="14" class="code-font" fill="#1e293b">1. Metas: &lt;GoalCard /&gt;, &lt;GoalStats /&gt;</text>
+        <text x="0" y="32" class="code-font" fill="#1e293b">2. Invert: &lt;TeachingSessionModal /&gt;</text>
+        <text x="0" y="50" class="code-font" fill="#1e293b">3. Feedback: &lt;KnowledgeReportModal /&gt;</text>
+        <text x="0" y="68" class="code-font" fill="#1e293b">4. Gamificação: &lt;StudentEvolutionView /&gt;</text>
+        <text x="0" y="90" class="comp-desc">Suporte a Áudio (Modo Caminhada Hands-Free)</text>
+        <text x="0" y="104" class="comp-desc">via Web Speech API nativa do browser.</text>
       </g>
     </g>
 
-    <!-- StorageService Bridge -->
-    <g transform="translate(588, 62)">
-      <rect width="236" height="122" rx="10" fill="#fefce8" stroke="#fef08a" stroke-width="1.2"/>
-      <rect x="10" y="8" width="115" height="18" rx="4" fill="#fef3c7"/>
-      <text x="15" y="21" class="badge-text" fill="#b45309">STORAGESERVICE</text>
+    <!-- Bloco 3: Camada de Serviços -->
+    <g transform="translate(584, 48)">
+      <rect width="260" height="154" rx="10" fill="#fefce8" stroke="#fef08a" stroke-width="1.2"/>
+      <rect x="10" y="8" width="135" height="18" rx="4" fill="#fef3c7"/>
+      <text x="15" y="21" class="badge-text" fill="#b45309">SERVIÇOS DE DOMÍNIO</text>
       
       <g transform="translate(10, 36)">
-        <text x="0" y="12" class="comp-title" fill="#92400e">Camada de Persistência</text>
-        <text x="0" y="30" class="comp-desc">Serializa e desserializa dados</text>
-        <text x="0" y="44" class="comp-desc">com tratamento de exceções,</text>
-        <text x="0" y="58" class="comp-desc">dados de exemplo padrão e</text>
-        <text x="0" y="72" class="comp-desc">isolamento total da UI.</text>
+        <text x="0" y="14" class="comp-title" fill="#92400e">• InvertService</text>
+        <text x="0" y="28" class="comp-desc">Motor Feynman, IA de personas,</text>
+        <text x="0" y="42" class="comp-desc">diagnóstico Raio-X e flashcards.</text>
+        
+        <text x="0" y="64" class="comp-title" fill="#92400e">• StorageService</text>
+        <text x="0" y="78" class="comp-desc">Gerencia objetivos e metas.</text>
+
+        <text x="0" y="100" class="comp-title" fill="#92400e">• SpeechSynthesis &amp; Recognition</text>
       </g>
     </g>
   </g>
 
   <!-- Connector Line 2: Browser/Service -> localStorage -->
-  <g transform="translate(480, 410)">
-    <line x1="0" y1="0" x2="0" y2="35" stroke="#059669" stroke-width="2.5" stroke-dasharray="4 3"/>
-    <polygon points="-5,33 5,33 0,41" fill="#059669"/>
-    <rect x="18" y="8" width="330" height="22" rx="5" fill="#d1fae5"/>
-    <text x="26" y="23" class="flow-label" fill="#065f46">3. StorageService lê e grava via window.localStorage</text>
+  <g transform="translate(480, 432)">
+    <line x1="0" y1="0" x2="0" y2="34" stroke="#059669" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <polygon points="-5,32 5,32 0,40" fill="#059669"/>
+    <rect x="18" y="6" width="350" height="22" rx="5" fill="#d1fae5"/>
+    <text x="26" y="21" class="flow-label" fill="#065f46">3. InvertService e StorageService leem/gravam no localStorage</text>
   </g>
 
   <!-- CAMADA 3: Disco Local (Bottom Level) -->
-  <g transform="translate(180, 452)" filter="url(#shadow3)">
-    <rect width="600" height="85" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
+  <g transform="translate(160, 474)" filter="url(#shadow3)">
+    <rect width="640" height="88" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="2"/>
     <rect x="16" y="12" width="135" height="20" rx="5" fill="#dcfce7"/>
     <text x="24" y="26" class="badge-text" fill="#15803d">STORAGE DO NAVEGADOR</text>
 
     <text x="165" y="28" class="card-title">Disco Local do Navegador (window.localStorage)</text>
     <text x="16" y="50" class="comp-desc">
-      Chave: <tspan class="code-font" fill="#0f172a" font-weight="600">'studyflow_objectives_v1'</tspan> — Dados NÃO vão para o GCP; ficam isolados na máquina do aluno.
+      Os dados NÃO estão no GCP. Ficam 100% salvos no disco local do computador ou celular do estudante:
     </text>
-    <rect x="16" y="58" width="568" height="18" rx="4" fill="#f0fdf4"/>
-    <text x="24" y="71" class="code-font" fill="#166534">JSON Stringify Array [ { id, title, description, deadline, status, createdAt } ]</text>
+    <rect x="16" y="58" width="608" height="20" rx="4" fill="#f0fdf4"/>
+    <text x="24" y="72" class="code-font" fill="#166534">Keys: 'studyflow_objectives_v1' • 'studyflow_invert_progress_v2' • 'studyflow_invert_reports_v1'</text>
   </g>
 </svg>

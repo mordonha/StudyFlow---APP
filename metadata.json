@@ -1,6 +1,6 @@
 {
   "name": "StudyFlow",
-  "description": "Aplicação para estudantes iniciantes organizarem seus objetivos de estudo com foco, prazos e acompanhamento.",
+  "description": "Aplicação para estudantes organizarem objetivos de estudo e consolidarem o aprendizado através da Técnica Feynman ('Invert - Aprenda Ensinando') com Inteligência Artificial e neurociência.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

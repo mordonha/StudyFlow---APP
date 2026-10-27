@@ -1,7 +1,7 @@
-# StudyFlow 🎯 — Gerenciador de Objetivos de Estudo
+# StudyFlow 🎯 — Gerenciador de Objetivos de Estudo & Laboratório Invert ("Aprenda Ensinando")
 
-> **Aplicação desenvolvida durante a Imersão Engenharia de Software com IA: Dev na Era da IA (Google & Alura)**  
-> *Uma experiência prática de ponta a ponta: da ideação no Google AI Studio à entrega em arquitetura serverless no Google Cloud Run.*
+> **Aplicação desenvolvida e evoluída durante a Imersão Engenharia de Software com IA: Dev na Era da IA (Google & Alura)**  
+> *Uma experiência prática de ponta a ponta: da ideação com neurociência no Google AI Studio à entrega em arquitetura serverless no Google Cloud Run.*
 
 ---
 
@@ -24,118 +24,119 @@ O objetivo primordial desta aplicação é exercitar as competências centrais d
 
 ---
 
-## 📌 Visão Geral do Produto
+## 🧠 A Grande Inovação: Invert ("Aprenda Ensinando")
 
-O **StudyFlow** é uma aplicação web focada em auxiliar estudantes iniciantes a organizarem seus objetivos de estudo, combaterem a procrastinação e acompanharem sua evolução acadêmica de forma acolhedora, visual e intuitiva.
+Nesta nova versão desenvolvida na branch `StudyFlow-Invert-App`, o **StudyFlow** foi refatorado e expandido para integrar um método inovador de estudo baseado em **neurociência e Inteligência Artificial**, fundamentado na famosa **Técnica Feynman**.
 
-Diferente do desenvolvimento de software tradicional, o ciclo de vida deste projeto foi concebido e estruturado com o apoio direto de **Inteligência Artificial Generativa (Google AI Studio / Modelos Gemini)** em quatro grandes etapas da engenharia de software:
+### O Conceito Central:
+> *"A melhor forma de aprender algo é tentando explicar esse assunto de forma simples para outra pessoa."* — Richard Feynman
+
+No **Invert**, a dinâmica tradicional de estudos é invertida: **você não é o aluno, você é o professor**. O aplicativo coloca uma Inteligência Artificial no papel de um **"aluno curioso"** que você precisa ensinar.
 
 ```
-┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐
-│ 1. ESPECIFICAÇÃO│ ───► │ 2. PLANEJAMENTO │ ───► │3. IMPLEMENTAÇÃO │ ───► │  4. VALIDAÇÃO   │
-└─────────────────┘      └─────────────────┘      └─────────────────┘      └─────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                        DINÂMICA TRADICIONAL                            │
+│  Professor / Livro / IA   ──────────────►  Você (Estudante Passivo)    │
+│  (Cria a "Ilusão de Competência": parece fácil quando os outros falam) │
+└────────────────────────────────────────────────────────────────────────┘
+                                    ▼
+┌────────────────────────────────────────────────────────────────────────┐
+│                      DINÂMICA INVERT (FEYNMAN)                         │
+│  Você (Professor Ativo)   ──────────────►  Aluno IA Curioso (Dúvidas)  │
+│  (Força Recuperação Ativa, Identifica Lacunas e Gera Memória de Longo) │
+└────────────────────────────────────────────────────────────────────────┘
 ```
+
+### Como Funciona na Prática:
+1. **Escolha o Tema:** Você pode ensinar um dos seus objetivos cadastrados no StudyFlow (com 1 clique no botão *"Ensinar (Feynman)"*) ou digitar qualquer assunto livre (ex: *Estruturas de Dados, Fotossíntese, Segunda Guerra, Cálculo*).
+2. **Escolha o Perfil do seu "Aluno IA":**
+   - 👦 **Arthur (O Sobrinho de 10 anos):** Não conhece jargões. Obriga você a usar analogias e metáforas do dia a dia (peças de Lego, regras de trânsito, brinquedos).
+   - 🧐 **Beatriz (A Colega Cética):** Questiona suas fontes, aponta contradições e pede provas: *"Mas por que exatamente isso acontece?"*.
+   - 🎯 **Carlos (O Aluno Pré-Vestibular / Concurseiro):** Focado em pegadinhas de bancas, detalhes técnicos de prova e fórmulas.
+3. **A Sessão de Ensino (Voz ou Texto):** Você explica o conteúdo com suas próprias palavras, podendo digitar ou ditar por áudio através do microfone integrado.
+4. **O Teste de Compreensão da IA:** A IA responde com dúvidas genuínas em caráter da persona, aponta o que compreendeu e faz perguntas sobre trechos vagos.
+5. **O "Raio-X do Conhecimento" (Feedback Diagnóstico):** Ao finalizar a aula, a IA gera um relatório cirúrgico:
+   - 🌟 **O que você domina:** Conceitos explicados com clareza e precisão.
+   - 🔍 **Pontos Cegos:** Detalhes importantes do conteúdo que você esqueceu de mencionar.
+   - ⚠️ **Erros Conceituais:** Equívocos ou afirmações categóricas sem fundamentação.
+   - 📊 **Nota de Didática (0 a 100):** Avaliação objetiva da clareza da explicação.
+6. **Recursos Extras Implementados:**
+   - 🎧 **Modo Caminhada (100% Hands-Free):** O aplicativo fala as dúvidas do aluno em voz alta utilizando a *Web Speech API (SpeechSynthesis)* nativa, permitindo que o usuário estude e explique enquanto caminha ou realiza outras tarefas.
+   - 🏆 **Gamificação ("Evolua seu Aluno"):** Seu aluno virtual começa como *"Leigo Curioso"* e ganha XP a cada aula bem explicada, subindo de nível (*Aprendiz, Estudante Aplicado, Pensador Crítico, Mestre*) e desbloqueando diplomas acadêmicos!
+   - 🗂️ **Geração Automática de Revisão (Flashcards):** Criação instantânea de cartões de recuperação ativa com perguntas focadas exatamente nas lacunas e pontos cegos identificados no Raio-X.
 
 ---
 
 ## 🏗️ Arquitetura da Aplicação por Etapas
 
-Abaixo, detalhamos cada uma das 4 etapas fundamentais da arquitetura de software aplicadas ao projeto, acompanhadas de seus respectivos diagramas arquiteturais.
+Abaixo, detalhamos como a arquitetura do **StudyFlow + Invert** foi concebida nas 4 etapas fundamentais da Engenharia de Software.
 
 ---
 
 ### 1. Especificação (Specification & Ideation)
 
-Na etapa de especificação, o foco foi definir com rigor **qual problema resolver** e **para quem resolver**, antes de qualquer linha de código ser escrita.
+A especificação evoluiu para integrar a neurociência cognitiva e o aprendizado ativo ao gerenciamento de metas.
 
 ![Arquitetura da Fase de Especificação](docs/architecture/01-especificacao.svg)
 
-#### 💡 O Processo de Ideação e Requisitos com IA:
-1. **Exploração Conceitual no Playground (Prompt 1)**:
-   - **Ambiente:** Google AI Studio (Playground).
-   - **Prompt utilizado:**
-     > *"Dê uma ideia de aplicativo para ajudar pessoas a estudar."*
-   - **Objetivo:** Explorar como a IA em linguagem natural apoia o brainstorming inicial de produto, identificando dores reais de estudantes e mapeando soluções viáveis.
-2. **Definição de Requisitos de Produto (Prompt 2)**:
-   - **Ambiente:** Google AI Studio (*New App*).
-   - **Prompt utilizado:**
-     > *"Você é uma pessoa especialista em produtos digitais educacionais. Queremos criar o StudyFlow, uma aplicação simples para ajudar estudantes iniciantes a organizar objetivos de estudo.*  
-     > *A primeira versão deve permitir que a pessoa: cadastre, visualize, edite, exclua um objetivo e mantenha seus dados após atualizar a página.*  
-     > *Para cada objetivo, considere: título, descrição, prazo e status.*  
-     > *Organize a resposta em: 1. problema que o aplicativo resolve; 2. público principal; 3. requisitos funcionais; 4. critérios que podemos utilizar para testar a primeira versão.*  
-     > **Não escreva código ainda.**"*
-3. **A Regra de Ouro da Engenharia de Software**:
-   - A diretiva **"Não escreva código ainda"** garantiu a separação indispensável entre a análise de requisitos de negócio e a solução técnica.
-4. **Artefatos Produzidos**:
-   - **Problema:** Falta de clareza, desorganização e perda de ritmo de estudantes em início de jornada.
-   - **Público-alvo:** Estudantes iniciantes que necessitam de um sistema visual e sem atrito.
-   - **Requisitos Funcionais (CRUD):** Criar, listar, atualizar e excluir metas de estudo com persistência local.
-   - **Critérios de Aceite:** Roteiro formal que serviu de base para homologar a versão 1.0 (MVP).
+#### 💡 Os Pilares da Especificação:
+1. **Combate à Ilusão de Competência:** Leitura e consumo passivo de vídeo-aulas geram uma falsa percepção de domínio. A exigência de verbalizar ou redigir a explicação força a **recuperação ativa** (*active recall*), consolidando a sinapse de longo prazo.
+2. **Engenharia de Prompt para Alunos Virtuais:** Em vez de usar a IA como oráculo que dá respostas prontas (diminuindo o esforço cognitivo do aluno), a IA foi especificada como um **agente questionador** que estimula o raciocínio crítico do usuário.
+3. **Elicitação das 3 Personas:** Definidas regras de comportamento rigorosas para cada perfil:
+   - *Sobrinho:* Vetar jargões e disparar alertas infantis ao encontrar termos acadêmicos.
+   - *Cética:* Exigir relação de causalidade e provas lógicas.
+   - *Vestibulando:* Cobrar pegadinhas, exceções e termos técnicos de prova.
+4. **Preservação de Escopo:** Manter 100% da usabilidade existente do gerenciador de metas do StudyFlow (CRUD, prazos, cálculo de atrasos, estatísticas de progresso e persistência local).
 
 ---
 
 ### 2. Planejamento (Architectural Planning & Design)
 
-Com a especificação consolidada, a etapa de planejamento estruturou as decisões arquiteturais, a decomposição em módulos, a tipagem de dados e a estratégia de armazenamento.
+O planejamento estruturou o sistema em módulos independentes, desacoplando o Laboratório Invert do motor de metas.
 
 ![Arquitetura da Fase de Planejamento](docs/architecture/02-planejamento.svg)
 
-#### 📐 Decisões e Pilares Arquiteturais:
-1. **Arquitetura Client-Side First (Sem Backend no MVP)**:
-   - **Decisão:** Não utilizar banco de dados relacional ou API backend remota nesta primeira fase.
-   - **Justificativa:** Garantir privacidade total ao estudante (os dados pertencem e residem apenas no seu navegador), eliminar custos de infraestrutura e viabilizar funcionamento instantâneo e offline.
-2. **Padrão Service / Repository (`StorageService`)**:
-   - Toda a responsabilidade de leitura, gravação, validação e desserialização do `window.localStorage` foi isolada no módulo [`storageService.ts`](file:///c:/Users/marco/OneDrive/Documentos/data%20science/code_repo/studyflow-imersao-dev-ai-google-engsoft/src/services/storageService.ts).
-   - Componentes visuais não manipulam diretamente a API nativa do navegador, preservando o desacoplamento e facilitando futuras migrações para APIs REST/GraphQL.
-3. **Modelagem de Domínio & Tipagem Estrita (TypeScript)**:
-   - Localizada em [`src/types/objective.ts`](file:///c:/Users/marco/OneDrive/Documentos/data%20science/code_repo/studyflow-imersao-dev-ai-google-engsoft/src/types/objective.ts):
-     - `StudyObjective`: Contrato de dados com `id`, `title`, `description`, `deadline` (formato ISO/YYYY-MM-DD), `status` e `createdAt`.
-     - `ObjectiveStatus`: Tipo de união estrito (`'nao_iniciado' | 'em_andamento' | 'concluido'`).
-     - `ObjectiveFormData`: Tipagem dedicada para entrada e validação em formulários.
-4. **Decomposição em Componentes Modulares**:
-   - `<Header />`: Marca, propósito acolhedor e atalho de ação primária (*Novo Objetivo*).
-   - `<GoalStats />`: Painel de métricas analíticas (total, andamento, concluídos) e barra de progresso dinâmico em porcentagem.
-   - `<GoalCard />`: Cartão individual com cálculo em tempo real de dias até o prazo ou dias de atraso, tags de status e ações rápidas.
-   - `<GoalFormModal />`: Modal de formulário com foco e acessibilidade.
-   - `<ConfirmModal />`: Modal seguro com bloqueio de exclusões acidentais.
-   - `<EmptyState />`: Onboarding visual quando a lista estiver vazia ou nenhum objetivo for encontrado na busca.
+#### 📐 Módulos e Contratos Técnicos:
+1. **Camada de Apresentação (UI / UX):**
+   - `<Header />`: Navegação por abas (*Metas & Prazos* vs. *Evolução do Aluno IA*) e gatilho global de ensino.
+   - `<TeachingSessionModal />`: Sala de aula interativa com transcrição de chat, botão de voz e botão para alternar o *Modo Caminhada*.
+   - `<PersonaSelector />`: Grid seletor de alunos com badges de foco mental.
+   - `<KnowledgeReportModal />`: Modal visual do Raio-X do Conhecimento com flip cards interativos de revisão ativa.
+   - `<StudentEvolutionView />`: Painel de gamificação com barra de XP, nível atual e vitrine de diplomas.
+   - `<GoalCard />`: Cartão de objetivo aprimorado com atalho direto 💡 *"Ensinar (Feynman)"*.
+2. **Modelagem de Domínio & Tipos TypeScript (`src/types/invert.ts`):**
+   - `StudentPersonaId`: `'sobrinho' | 'cetico' | 'vestibulando'`
+   - `TeachingMessage`: Representação de turnos de diálogo com emissor (`'user' | 'ai'`) e timestamp.
+   - `KnowledgeReport`: Entidade imutável com pontuação, domínio, pontos cegos, erros e flashcards.
+   - `VirtualStudentProgress`: Estado de gamificação com nível, XP atual e diplomas desbloqueados.
+3. **Camada de Serviços (`src/services/invertService.ts`):**
+   - Isolamento das regras de gamificação, motor de geração de réplicas da IA e integração com as APIs de voz do navegador (`SpeechSynthesis` e `SpeechRecognition`).
 
 ---
 
 ### 3. Implementação (Implementation & Software Architecture)
 
-A implementação materializou o planejamento através da geração assistida por IA (Prompt 3 no Google AI Studio *New App*), adotando uma stack moderna com React 19, TypeScript e Tailwind CSS v4, empacotada para entrega serverless via Google Cloud Run.
+A implementação estendeu o código-fonte com TypeScript estrito, garantindo reatividade de estado limpa e persistência no cliente.
 
 ![Arquitetura da Fase de Implementação](docs/architecture/03-implementacao.svg)
-
-#### 🚀 O Ciclo de Construção (Prompt 3):
-- **Prompt utilizado:**
-  > *"Crie uma aplicação web chamada StudyFlow para organizar objetivos de estudo.*  
-  > *Público: Estudantes iniciantes que precisam organizar o que desejam aprender.*  
-  > *A aplicação deve permitir: cadastrar, listar, editar, excluir somente após confirmação, exibir quantidade e salvar no localStorage.*  
-  > *Requisitos de interface: visual simples e acolhedor, formulário fácil, cartões, mensagens de estado vazio, responsivo, textos em pt-BR.*  
-  > *Requisitos técnicos: usar TypeScript, separar componentes, separar tipos de dados, criar serviço para armazenamento, não utilizar backend nesta primeira versão.*  
-  > *Antes de finalizar, confira se todos os requisitos foram implementados."*
 
 #### 🌐 Arquitetura de Runtime e Fluxo de Dados:
 
 ```
 [ Google Cloud Run (Serviço Serverless no GCP) ]
    │
-   │  1. Entrega o código compilado (HTML + React/JS + Tailwind CSS)
+   │  1. Entrega o código compilado (HTML + React 19 + JS Bundled + Tailwind CSS)
    ▼
 [ Navegador do Usuário (Computador / Celular do Estudante) ]
    │
    │  2. O React roda localmente na máquina do estudante (SPA)
-   │  3. StorageService lê e grava via window.localStorage
+   │  3. InvertService e StorageService leem e gravam via window.localStorage
    ▼
 [ Disco Local do Seu Navegador (localStorage) ]
+   - 'studyflow_objectives_v1'       (Metas e prazos)
+   - 'studyflow_invert_progress_v2'  (Nível, XP e diplomas do aluno)
+   - 'studyflow_invert_reports_v1'   (Histórico de Raio-X e flashcards)
 ```
-
-1. **Google Cloud Run (GCP)**: Atua como hospedeiro serverless escalável sob demanda, servindo com altíssima velocidade os assets estáticos gerados pelo Vite (`dist/`).
-2. **Navegador do Usuário**: Executa o runtime do React 19 no cliente, gerenciando estados reativos (`useState`, `useEffect`, `useMemo`) e propagando eventos via fluxo de dados unidirecional.
-3. **StorageService**: Intermediário síncrono que serializa objetos em JSON e os persiste sob a chave `'studyflow_objectives_v1'`.
-4. **Disco Local (localStorage)**: Garante que mesmo sem sinal de internet ou após recarregar o navegador (F5), todos os dados do aluno permaneçam preservados.
 
 ---
 
@@ -153,10 +154,10 @@ A aplicação StudyFlow foi concebida e publicada na infraestrutura do **Google 
   O Cloud Run executa um contêiner Linux leve contendo Node.js e o runtime do Vite/Express. Os arquivos compilados do projeto (`.tsx`, `.css`, `index.html`) residem diretamente dentro do sistema de arquivos virtual desse contêiner virtual.  
   Quando você acessa a URL, o Cloud Run processa a requisição HTTP e entrega o pacote frontend (HTML, JavaScript compilado e Tailwind CSS) para o navegador do estudante, onde o React assume o controle da interface.
 
-#### 2. Onde ficam os objetivos de estudo que você cadastra? (Isolamento de Dados)
+#### 2. Onde ficam os objetivos de estudo e aulas que você cadastra? (Isolamento de Dados)
 > [!IMPORTANT]
 > **Os dados NÃO estão no Google Cloud Platform (GCP).**  
-> Nesta primeira versão da aplicação (MVP), os objetivos de estudo criados:
+> Nesta versão da aplicação, os objetivos de estudo, as aulas ministradas e o progresso do aluno IA:
 > - ❌ **Não vão para o Cloud Run;**
 > - ❌ **Não vão para o Cloud Storage;**
 > - ❌ **Não vão para nenhum banco de dados em nuvem** (como Cloud Firestore, Cloud SQL ou Bigtable).
@@ -164,7 +165,7 @@ A aplicação StudyFlow foi concebida e publicada na infraestrutura do **Google 
 **Eles ficam armazenados exclusivamente no `localStorage` do seu navegador:**
 - O `localStorage` é uma memória interna e persistente do próprio navegador web (armazenamento local gravado no disco físico do computador ou celular do estudante).
 - **Por que os dados continuam lá após o F5?**  
-  Se você atualizar a página (F5 ou recarregar), os dados permanecem visíveis porque o navegador lê diretamente do disco da sua própria máquina via `StorageService.getAll()`.
+  Se você atualizar a página (F5 ou recarregar), os dados permanecem visíveis porque o navegador lê diretamente do disco da sua própria máquina via `StorageService` e `InvertService`.
 - **Por que os dados não aparecem em outro dispositivo?**  
   Se você abrir a mesma URL no celular, em outro navegador (exemplo: Mozilla Firefox em vez do Google Chrome) ou em uma aba anônima, os objetivos não estarão lá. O `localStorage` é estritamente isolado por dispositivo, navegador e domínio de navegação.
 
@@ -208,41 +209,48 @@ Caso deseje realizar o deploy a partir do código-fonte local utilizando o SDK o
 
 ---
 
-#### 📂 Estrutura do Código-Fonte:
+#### 📂 Estrutura do Código-Fonte Atualizada:
 ```bash
 studyflow-imersao-dev-ai-google-engsoft/
 ├── docs/
-│   └── architecture/          # Diagramas de arquitetura em vetor SVG
+│   └── architecture/               # Diagramas em vetor SVG (atualizados)
 │       ├── 01-especificacao.svg
 │       ├── 02-planejamento.svg
 │       ├── 03-implementacao.svg
 │       └── 04-validacao.svg
 ├── src/
-│   ├── components/            # Componentes visuais desacoplados
-│   │   ├── ConfirmModal.tsx   # Diálogo de confirmação para exclusão segura
-│   │   ├── EmptyState.tsx     # Estado vazio e busca sem resultados
-│   │   ├── GoalCard.tsx       # Card do objetivo com cálculo de prazos
-│   │   ├── GoalFormModal.tsx  # Formulário para criar e editar objetivos
-│   │   ├── GoalStats.tsx      # Métricas e barra de progresso percentual
-│   │   └── Header.tsx         # Barra superior com branding e CTA
+│   ├── components/
+│   │   ├── invert/                 # Novo Subsistema: Laboratório Feynman
+│   │   │   ├── KnowledgeReportModal.tsx # Raio-X do Conhecimento & Flashcards
+│   │   │   ├── PersonaSelector.tsx      # Seletor das 3 Personas de Alunos IA
+│   │   │   ├── StudentEvolutionView.tsx # Gamificação, Níveis e Diplomas
+│   │   │   └── TeachingSessionModal.tsx # Sala de Aula Interativa (Voz & Texto)
+│   │   ├── ConfirmModal.tsx        # Confirmação de exclusão segura
+│   │   ├── EmptyState.tsx          # Estados vazios e onboarding
+│   │   ├── GoalCard.tsx            # Card com cálculo de prazos + botão Invert
+│   │   ├── GoalFormModal.tsx       # Formulário de metas
+│   │   ├── GoalStats.tsx           # Painel de métricas e barra de progresso
+│   │   └── Header.tsx              # Barra superior com abas de navegação
 │   ├── services/
-│   │   └── storageService.ts  # Camada de abstração do localStorage (CRUD)
+│   │   ├── invertService.ts        # Motor de IA Feynman, Gamificação e Áudio
+│   │   └── storageService.ts       # Repositório de objetivos no localStorage
 │   ├── types/
-│   │   └── objective.ts       # Contratos de interfaces e tipos TypeScript
-│   ├── App.tsx                # Orquestrador de estado e layout principal
-│   ├── index.css              # Configurações globais e Tailwind CSS
-│   └── main.tsx               # Ponto de montagem da aplicação React
-├── index.html                 # Shell HTML da Single Page Application
-├── package.json               # Dependências e scripts do projeto
-├── tsconfig.json              # Configurações do compilador TypeScript
-└── vite.config.ts             # Configuração de build ultra-rápido com Vite
+│   │   ├── invert.ts               # Tipos do Laboratório Invert
+│   │   └── objective.ts            # Tipos dos Objetivos de Estudo
+│   ├── App.tsx                     # Orquestrador mestre de estado
+│   ├── index.css                   # Tailwind CSS v4
+│   └── main.tsx                    # Ponto de entrada React 19
+├── index.html                      # Shell da aplicação
+├── package.json                    # Dependências (@google/genai, lucide, react 19)
+├── tsconfig.json                   # Compilador TypeScript
+└── vite.config.ts                  # Bundler Vite
 ```
 
 ---
 
 ### 4. Validação (Validation, Quality & Testing)
 
-A fase de validação fecha o ciclo de engenharia, verificando se cada critério de aceitação definido na Especificação (Prompt 2) e no Planejamento (Prompt 3) foi rigorosamente atendido.
+A validação assegura a qualidade da experiência do usuário em todas as frentes:
 
 ![Arquitetura da Fase de Validação](docs/architecture/04-validacao.svg)
 
@@ -250,21 +258,17 @@ A fase de validação fecha o ciclo de engenharia, verificando se cada critério
 
 | Requisito / Critério de Aceite | Implementação no StudyFlow | Status |
 | :--- | :--- | :---: |
-| **Cadastrar objetivo** | Formulário controlado em `<GoalFormModal>` com título, descrição, prazo e status | ✅ Concluído |
-| **Visualizar objetivos** | Renderização responsiva em grade via `<GoalCard>` com tags coloridas | ✅ Concluído |
-| **Exibir quantidade e métricas** | Painel analítico `<GoalStats>` com contadores e barra de progresso percentual | ✅ Concluído |
-| **Editar objetivo** | Modal reutilizado com pré-preenchimento e atualização de dados | ✅ Concluído |
-| **Excluir somente após confirmação** | Barreira de segurança em `<ConfirmModal>` evitando perda acidental de metas | ✅ Concluído |
-| **Persistência após atualização (F5)** | Leitura e gravação resiliente em `localStorage` via `StorageService` | ✅ Concluído |
-| **Mensagem quando não houver objetivos** | Componente `<EmptyState>` acolhedor com CTA para novos cadastros e filtros | ✅ Concluído |
-| **Cálculo inteligente de prazos** | Algoritmo em tempo real alertando *"Atrasado há X dias"* ou data formatada | ✅ Concluído |
-| **Tipagem estática segura** | Código 100% tipado com TypeScript, garantindo compilação sem erros (`tsc`) | ✅ Concluído |
-| **Textos em Português do Brasil** | Interface amigável, acolhedora e totalmente localizada em pt-BR | ✅ Concluído |
-
-#### 🛡️ Resiliência e Prevenção de Falhas:
-- **Proteção de Dados Corrompidos:** O `StorageService` implementa blocos `try/catch` que tratam erros na leitura do `localStorage` sem quebrar a aplicação do usuário.
-- **Onboarding Automático (Seed Data):** Caso um estudante acesse a aplicação pela primeira vez e seu storage esteja vazio, o sistema injeta automaticamente 3 objetivos de estudo exemplares para orientá-lo sobre como utilizar a plataforma.
-- **Teclas de Atalho & Acessibilidade:** O modal de confirmação escuta o evento global da tecla `Escape` (`ESC`), garantindo fechamento rápido e ergonômico.
+| **Cadastrar, listar e editar objetivos** | Formulário controlado e grid responsiva com badges de prazos e cálculo de atraso | ✅ Concluído |
+| **Exclusão segura com confirmação** | Modal `<ConfirmModal>` acessível via teclado (`ESC`) e clique externo | ✅ Concluído |
+| **Persistência total pós-F5** | `localStorage` guarda metas, histórico de aulas e progresso do aluno virtual | ✅ Concluído |
+| **Inversão de papéis (Técnica Feynman)** | O usuário ensina e o aluno IA formula dúvidas e questionamentos genuínos | ✅ Concluído |
+| **3 Personas com desafios cognitivos** | Arthur (sem jargões), Beatriz (cética/provas) e Carlos (técnico/ENEM) | ✅ Concluído |
+| **Raio-X do Conhecimento** | Diagnóstico com nota de clareza (0-100), domínio, pontos cegos e erros conceituais | ✅ Concluído |
+| **Geração automática de flashcards** | Cartões interativos de revisão ativa criados com base nas lacunas detectadas | ✅ Concluído |
+| **Modo Caminhada (Hands-Free)** | Leitura das dúvidas do aluno em voz alta com a API `SpeechSynthesis` | ✅ Concluído |
+| **Entrada por Voz e Áudio** | Microfone integrado com `SpeechRecognition` nativo do navegador | ✅ Concluído |
+| **Gamificação ("Evolua seu Aluno")** | Sistema de XP cumulativo, níveis evolutivos e diplomas desbloqueados | ✅ Concluído |
+| **Tipagem estática segura** | Código 100% tipado com TypeScript, sem tipos `any` inseguros | ✅ Concluído |
 
 ---
 
@@ -275,7 +279,8 @@ A fase de validação fecha o ciclo de engenharia, verificando se cada critério
 - **Build Tool & Bundler:** [Vite](https://vitejs.dev/)
 - **Estilização & Design System:** [Tailwind CSS v4](https://tailwindcss.com/)
 - **Ícones Modernos:** [Lucide React](https://lucide.dev/)
-- **Inteligência Artificial:** [Google AI Studio](https://aistudio.google.com/) (Gemini Flash & Pro)
+- **APIs Nativas do Navegador:** Web Speech API (`SpeechRecognition` e `SpeechSynthesis`), `window.localStorage`
+- **Inteligência Artificial:** [Google AI Studio](https://aistudio.google.com/) (Gemini Models & Prompt Engineering)
 - **Hospedagem & Infraestrutura:** [Google Cloud Run](https://cloud.google.com/run) (Serverless Container Platform)
 - **Projeto Google Cloud:** `agentic-ai-eng-soft-alura`
 
@@ -289,10 +294,11 @@ A fase de validação fecha o ciclo de engenharia, verificando se cada critério
 
 ### Passo a Passo
 
-1. **Clone o repositório:**
+1. **Clone o repositório e acesse a branch da nova feature:**
    ```bash
    git clone https://github.com/mordonha/StudyFlow---APP.git
    cd studyflow-imersao-dev-ai-google-engsoft
+   git checkout StudyFlow-Invert-App
    ```
 
 2. **Instale as dependências:**
@@ -318,12 +324,74 @@ A fase de validação fecha o ciclo de engenharia, verificando se cada critério
 
 ---
 
+## 🚀 Próximos Passos: Cenário para Merge das Branches e Deploy no GCP (Google Cloud SDK)
+
+> [!IMPORTANT]
+> **Cenário de Orientações Futuras:** Conforme solicitado, as novas features foram desenvolvidas e isoladas nesta branch (`StudyFlow-Invert-App`). O merge e o deploy não foram executados agora. Quando estiver pronto para unificar com a branch `main` e atualizar a produção no Google Cloud, execute os passos abaixo.
+
+### Passo 1: Merge da Branch `StudyFlow-Invert-App` para a `main`
+
+No terminal da sua máquina:
+```bash
+# 1. Certifique-se de que todas as alterações na branch da feature foram commitadas
+git status
+
+# 2. Retorne para a branch principal
+git checkout main
+
+# 3. Puxe as atualizações mais recentes do repositório remoto
+git pull origin main
+
+# 4. Realize o merge das novas features do Invert na branch principal
+git merge StudyFlow-Invert-App -m "merge: incorpora features do Laboratorio Invert (Aprenda Ensinando) na main"
+
+# 5. Envie a branch main atualizada para o GitHub
+git push origin main
+```
+
+---
+
+### Passo 2: Deploy no Google Cloud Platform via Google Cloud SDK (`gcloud CLI`)
+
+Com o Google Cloud SDK instalado em sua máquina:
+
+1. **Autenticar no GCP com sua conta Google:**
+   ```bash
+   gcloud auth login
+   ```
+
+2. **Definir o projeto oficial da imersão como ativo:**
+   ```bash
+   gcloud config set project agentic-ai-eng-soft-alura
+   ```
+
+3. **Verificar se as APIs de nuvem estão ativas:**
+   ```bash
+   gcloud services enable run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com
+   ```
+
+4. **Executar o build e deploy direto no Google Cloud Run:**
+   ```bash
+   gcloud run deploy studyflow \
+     --source . \
+     --region us-central1 \
+     --platform managed \
+     --allow-unauthenticated \
+     --port 3000
+   ```
+   *O que acontecerá no GCP:*
+   - O Cloud Run invocará o **Cloud Build**, que compilará a aplicação Vite/React 19 em uma imagem de contêiner segura.
+   - O contêiner será implantado no Cloud Run com escalabilidade automática (0 a N instâncias).
+   - O console retornará a URL oficial HTTPS (`https://studyflow-*.run.app`) pronta para uso público!
+
+---
+
 ## 🎓 Créditos e Agradecimentos
 
-Este projeto foi construído durante a **Imersão Engenharia de Software com IA: Dev na Era da IA**, promovida pela **Alura** em parceria com o **Google**.
+Este projeto foi construído e expandido durante a **Imersão Engenharia de Software com IA: Dev na Era da IA**, promovida pela **Alura** em parceria com o **Google**.
 
 ---
 
 <div align="center">
-  <sub>Desenvolvido com foco, disciplina e Inteligência Artificial. StudyFlow © 2026.</sub>
+  <sub>Desenvolvido com foco, didática e Inteligência Artificial. StudyFlow + Invert © 2026.</sub>
 </div>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
   <defs>
     <style>
       .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #0f172a; }
@@ -20,21 +20,21 @@
   </defs>
 
   <!-- Background Canvas -->
-  <rect width="960" height="520" rx="16" fill="url(#bgGrad4)" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect width="960" height="540" rx="16" fill="url(#bgGrad4)" stroke="#e2e8f0" stroke-width="1.5"/>
 
   <!-- Top Header -->
   <g transform="translate(40, 34)">
     <rect x="0" y="0" width="36" height="36" rx="10" fill="#10b981" />
     <path d="M11 18L16 23L25 13" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <text x="48" y="20" class="title">4. Arquitetura da Fase de Validação</text>
-    <text x="48" y="36" class="subtitle">Matriz de Qualidade: Tipagem Estática, Critérios de Aceitação do Prompt 2 &amp; 3 e Resiliência</text>
+    <text x="48" y="20" class="title">4. Arquitetura da Fase de Validação (StudyFlow + Invert)</text>
+    <text x="48" y="36" class="subtitle">Matriz de Qualidade: Tipagem Estática, Critérios de Aceite das Metas e Validação do Invert (Feynman)</text>
   </g>
 
   <!-- 4 Validation Pillars -->
 
   <!-- CARD 1: Validação Estática -->
   <g transform="translate(40, 90)" filter="url(#shadow4)">
-    <rect width="210" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="210" height="375" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
     <rect x="14" y="14" width="115" height="22" rx="6" fill="#e0e7ff"/>
     <text x="22" y="29" class="badge-text" fill="#4338ca">NÍVEL 1 • CÓDIGO</text>
     <text x="14" y="58" class="card-title">Tipagem Estática</text>
@@ -45,118 +45,118 @@
       <text x="10" y="34" class="code-font" fill="#4338ca">npm run lint (tsc)</text>
       <text x="10" y="50" class="val-desc">Zero erros de compilação.</text>
 
-      <rect x="0" y="68" width="182" height="64" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Integridade de Modelos</text>
-      <text x="10" y="34" class="val-desc">Objetos de estudo com campos</text>
-      <text x="10" y="48" class="val-desc">obrigatórios validados no build.</text>
+      <rect x="0" y="68" width="182" height="74" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Contratos do Invert</text>
+      <text x="10" y="34" class="val-desc">Tipagem rígida para relatórios,</text>
+      <text x="10" y="48" class="val-desc">mensagens de chat e progresso</text>
+      <text x="10" y="62" class="val-desc">do aluno virtual (XP e Nível).</text>
 
-      <rect x="0" y="140" width="182" height="114" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+      <rect x="0" y="150" width="182" height="130" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
       <text x="10" y="18" class="val-item" fill="#166534">Garantias Técnicas</text>
-      <text x="10" y="34" class="val-desc" fill="#15803d">✓ Sem variáveis undefined</text>
-      <text x="10" y="50" class="val-desc" fill="#15803d">✓ Props dos componentes</text>
-      <text x="10" y="64" class="val-desc" fill="#15803d">  estritamente tipadas</text>
-      <text x="10" y="80" class="val-desc" fill="#15803d">✓ Status limitado à união:</text>
-      <text x="10" y="96" class="code-font" fill="#166534">  nao_iniciado | ...</text>
+      <text x="10" y="34" class="val-desc" fill="#15803d">✓ Props dos modais tipadas</text>
+      <text x="10" y="50" class="val-desc" fill="#15803d">✓ Status das metas seguro</text>
+      <text x="10" y="66" class="val-desc" fill="#15803d">✓ Personas limitadas à união:</text>
+      <text x="10" y="80" class="code-font" fill="#166534">  sobrinho | cetico | ...</text>
+      <text x="10" y="98" class="val-desc" fill="#15803d">✓ Zero tipos `any` inseguros</text>
     </g>
   </g>
 
-  <!-- CARD 2: Critérios Funcionais -->
+  <!-- CARD 2: Critérios do StudyFlow -->
   <g transform="translate(262, 90)" filter="url(#shadow4)">
-    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="216" height="375" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
     <rect x="14" y="14" width="130" height="22" rx="6" fill="#fef3c7"/>
-    <text x="22" y="29" class="badge-text" fill="#b45309">NÍVEL 2 • NEGÓCIO</text>
-    <text x="14" y="58" class="card-title">Critérios do Prompt 2</text>
+    <text x="22" y="29" class="badge-text" fill="#b45309">NÍVEL 2 • METAS</text>
+    <text x="14" y="58" class="card-title">Gestão de Objetivos</text>
 
     <g transform="translate(14, 76)">
       <rect x="0" y="0" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-      <text x="10" y="18" class="val-item" fill="#92400e">Cadastro de Objetivo</text>
+      <text x="10" y="18" class="val-item" fill="#92400e">Cadastro &amp; Edição</text>
       <text x="10" y="34" class="val-desc" fill="#78350f">Salva título, descrição, prazo</text>
       <text x="10" y="46" class="val-desc" fill="#78350f">e status com validação de dados.</text>
 
       <rect x="0" y="60" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-      <text x="10" y="18" class="val-item" fill="#92400e">Listagem &amp; Métricas</text>
-      <text x="10" y="34" class="val-desc" fill="#78350f">Exibe quantidade exata e</text>
-      <text x="10" y="46" class="val-desc" fill="#78350f">barra de progresso percentual.</text>
+      <text x="10" y="18" class="val-item" fill="#92400e">Listagem &amp; Filtros</text>
+      <text x="10" y="34" class="val-desc" fill="#78350f">Busca por texto e filtros</text>
+      <text x="10" y="46" class="val-desc" fill="#78350f">combinados por status em tempo real.</text>
 
       <rect x="0" y="120" width="188" height="52" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1"/>
-      <text x="10" y="18" class="val-item" fill="#92400e">Edição Completa</text>
-      <text x="10" y="34" class="val-desc" fill="#78350f">Permite alterar status e dados</text>
-      <text x="10" y="46" class="val-desc" fill="#78350f">preservando histórico do ID.</text>
+      <text x="10" y="18" class="val-item" fill="#92400e">Painel de Estatísticas</text>
+      <text x="10" y="34" class="val-desc" fill="#78350f">Métricas de progresso e barra %</text>
+      <text x="10" y="46" class="val-desc" fill="#78350f">atualizada instantaneamente.</text>
 
       <rect x="0" y="180" width="188" height="74" rx="8" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
       <text x="10" y="18" class="val-item" fill="#991b1b">Exclusão com Confirmação</text>
-      <text x="10" y="34" class="val-desc" fill="#b91c1c">Atende à exigência estrita:</text>
-      <text x="10" y="48" class="val-desc" fill="#b91c1c">"somente após confirmação",</text>
-      <text x="10" y="62" class="val-desc" fill="#b91c1c">evitando exclusões acidentais.</text>
+      <text x="10" y="34" class="val-desc" fill="#b91c1c">Bloqueio obrigatório no modal</text>
+      <text x="10" y="48" class="val-desc" fill="#b91c1c">para evitar perdas acidentais</text>
+      <text x="10" y="62" class="val-desc" fill="#b91c1c">(fechamento por ESC / clique fora).</text>
     </g>
   </g>
 
-  <!-- CARD 3: Persistência & Resiliência -->
+  <!-- CARD 3: Validação do Invert -->
   <g transform="translate(490, 90)" filter="url(#shadow4)">
-    <rect width="216" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="216" height="375" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
     <rect x="14" y="14" width="130" height="22" rx="6" fill="#dcfce7"/>
-    <text x="22" y="29" class="badge-text" fill="#15803d">NÍVEL 3 • DADOS</text>
-    <text x="14" y="58" class="card-title">Retenção de Dados</text>
+    <text x="22" y="29" class="badge-text" fill="#15803d">NÍVEL 3 • FEYNMAN</text>
+    <text x="14" y="58" class="card-title">Validação do Invert</text>
 
     <g transform="translate(14, 76)">
       <rect x="0" y="0" width="188" height="58" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item" fill="#166534">Teste de F5 / Reload</text>
-      <text x="10" y="34" class="val-desc" fill="#15803d">Recarregar a página mantém 100%</text>
-      <text x="10" y="48" class="val-desc" fill="#15803d">dos objetivos salvos no storage.</text>
+      <text x="10" y="18" class="val-item" fill="#166534">Reações das 3 Personas</text>
+      <text x="10" y="34" class="val-desc" fill="#15803d">Comportamento fiel: Arthur (10a),</text>
+      <text x="10" y="48" class="val-desc" fill="#15803d">Beatriz (Cética) e Carlos (ENEM).</text>
 
       <rect x="0" y="66" width="188" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Seed para Novos Estudantes</text>
-      <text x="10" y="34" class="val-desc">Caso storage vazio, injeta 3 metas</text>
-      <text x="10" y="48" class="val-desc">exemplares para onboarding.</text>
+      <text x="10" y="18" class="val-item">Raio-X do Conhecimento</text>
+      <text x="10" y="34" class="val-desc">Cálculo de didática (0-100),</text>
+      <text x="10" y="48" class="val-desc">mapeamento de lacunas e erros.</text>
 
       <rect x="0" y="132" width="188" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Tratamento de Exceções</text>
-      <text x="10" y="34" class="val-desc">Try/catch protege contra JSON</text>
-      <text x="10" y="48" class="val-desc">inválido ou storage desabilitado.</text>
+      <text x="10" y="18" class="val-item">Flashcards Automáticos</text>
+      <text x="10" y="34" class="val-desc">Geração interativa baseada nos</text>
+      <text x="10" y="48" class="val-desc">pontos cegos para revisão ativa.</text>
 
-      <rect x="0" y="198" width="188" height="56" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">UUID Único</text>
-      <text x="10" y="34" class="val-desc">crypto.randomUUID() previne</text>
-      <text x="10" y="48" class="val-desc">colisões de identificador.</text>
+      <rect x="0" y="198" width="188" height="64" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Gamificação &amp; Diplomas</text>
+      <text x="10" y="34" class="val-desc">XP persistido, níveis evolutivos e</text>
+      <text x="10" y="48" class="val-desc">desbloqueio automático de badges.</text>
     </g>
   </g>
 
-  <!-- CARD 4: Validação de UX & Interface -->
+  <!-- CARD 4: Validação de Áudio & Resiliência -->
   <g transform="translate(718, 90)" filter="url(#shadow4)">
-    <rect width="202" height="350" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="202" height="375" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
     <rect x="14" y="14" width="128" height="22" rx="6" fill="#f1f5f9"/>
-    <text x="22" y="29" class="badge-text" fill="#334155">NÍVEL 4 • UX/UI</text>
-    <text x="14" y="58" class="card-title">Experiência &amp; Prazos</text>
+    <text x="22" y="29" class="badge-text" fill="#334155">NÍVEL 4 • EXPERIÊNCIA</text>
+    <text x="14" y="58" class="card-title">Áudio &amp; Persistência</text>
 
     <g transform="translate(14, 76)">
-      <rect x="0" y="0" width="174" height="56" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Feedback Visual Toast</text>
-      <text x="10" y="34" class="val-desc">Notificações temporárias de 3s</text>
-      <text x="10" y="48" class="val-desc">para cada ação realizada.</text>
+      <rect x="0" y="0" width="174" height="66" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Modo Caminhada 🎧</text>
+      <text x="10" y="34" class="val-desc">Síntese de voz pt-BR via</text>
+      <text x="10" y="48" class="val-desc">SpeechSynthesis sem travar a UI.</text>
 
-      <rect x="0" y="64" width="174" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Estados Vazios (&lt;EmptyState&gt;)</text>
-      <text x="10" y="34" class="val-desc">Diferenciação: sem objetivos vs</text>
-      <text x="10" y="48" class="val-desc">busca/filtro sem resultados.</text>
+      <rect x="0" y="74" width="174" height="64" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Entrada de Voz (Mic)</text>
+      <text x="10" y="34" class="val-desc">SpeechRecognition nativo com</text>
+      <text x="10" y="48" class="val-desc">fallback gracioso caso offline.</text>
 
-      <rect x="0" y="132" width="174" height="60" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Indicador Dinâmico Prazo</text>
-      <text x="10" y="34" class="val-desc">Calcula dias restantes ou tag</text>
-      <text x="10" y="48" class="val-desc">vermelha de atraso no card.</text>
+      <rect x="0" y="146" width="174" height="66" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Persistência F5 / Reload</text>
+      <text x="10" y="34" class="val-desc">Mantém 100% dos dados</text>
+      <text x="10" y="48" class="val-desc">(metas, XP e relatórios salvos).</text>
 
-      <rect x="0" y="200" width="174" height="54" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
-      <text x="10" y="18" class="val-item">Acessibilidade Modal</text>
-      <text x="10" y="34" class="val-desc">Fechamento com tecla ESC e</text>
-      <text x="10" y="48" class="val-desc">backdrop com blur.</text>
+      <rect x="0" y="220" width="174" height="52" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="10" y="18" class="val-item">Mobile Responsive</text>
+      <text x="10" y="34" class="val-desc">Layout fluido e acolhedor.</text>
     </g>
   </g>
 
   <!-- Bottom Banner -->
-  <g transform="translate(40, 458)">
+  <g transform="translate(40, 480)">
     <rect width="880" height="42" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
     <circle cx="24" cy="21" r="5" fill="#10b981"/>
     <text x="38" y="25" class="footer-text">
-      <tspan font-weight="700" fill="#0f172a">Qualidade Garantida:</tspan> 100% dos critérios definidos no Prompt 2 e refinados no Prompt 3 foram testados e validados na entrega final.
+      <tspan font-weight="700" fill="#0f172a">Garantia Integrada:</tspan> O StudyFlow preserva 100% da usabilidade das metas e eleva o aprendizado com o Laboratório Invert.
     </text>
   </g>
 </svg>

@@ -1,5 +1,15 @@
 import React from 'react';
-import { Calendar, Clock, Edit3, Trash2, CheckCircle, PlayCircle, Circle, AlertCircle } from 'lucide-react';
+import {
+  Calendar,
+  Clock,
+  Edit3,
+  Trash2,
+  CheckCircle,
+  PlayCircle,
+  Circle,
+  AlertCircle,
+  Brain,
+} from 'lucide-react';
 import { StudyObjective, ObjectiveStatus, STATUS_LABELS } from '../types/objective';
 
 interface GoalCardProps {
@@ -7,6 +17,7 @@ interface GoalCardProps {
   onEdit: (objective: StudyObjective) => void;
   onDelete: (objective: StudyObjective) => void;
   onStatusChange: (id: string, newStatus: ObjectiveStatus) => void;
+  onTeachTopic?: (topic: string) => void;
 }
 
 export const GoalCard: React.FC<GoalCardProps> = ({
@@ -14,6 +25,7 @@ export const GoalCard: React.FC<GoalCardProps> = ({
   onEdit,
   onDelete,
   onStatusChange,
+  onTeachTopic,
 }) => {
   // Cálculo do prazo relativo
   const getDeadlineInfo = (deadlineStr: string, isCompleted: boolean) => {
@@ -128,8 +140,19 @@ export const GoalCard: React.FC<GoalCardProps> = ({
             </div>
           </div>
 
-          {/* Botões de Ação: Editar e Excluir */}
+          {/* Botões de Ação: Editar, Excluir e Ensinar */}
           <div className="flex items-center gap-1">
+            {onTeachTopic && (
+              <button
+                type="button"
+                onClick={() => onTeachTopic(objective.title)}
+                title="Ensinar este tema no Laboratório Feynman (Invert)"
+                aria-label={`Ensinar ${objective.title} com Técnica Feynman`}
+                className="p-1.5 text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors cursor-pointer"
+              >
+                <Brain className="w-4 h-4" />
+              </button>
+            )}
             <button
               onClick={() => onEdit(objective)}
               title="Editar este objetivo"
@@ -168,7 +191,7 @@ export const GoalCard: React.FC<GoalCardProps> = ({
         )}
       </div>
 
-      {/* Rodapé do Cartão: Prazo e Tags Informativas */}
+      {/* Rodapé do Cartão: Prazo, Tags e Atalho Feynman */}
       <div className="mt-5 pt-3.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs">
         {deadlineInfo && (
           <div className="flex items-center gap-1.5 text-slate-600">
@@ -177,13 +200,26 @@ export const GoalCard: React.FC<GoalCardProps> = ({
           </div>
         )}
 
-        {deadlineInfo?.tag && (
-          <span
-            className={`px-2 py-0.5 rounded-md border text-xs tabular-nums ${deadlineInfo.urgencyClass}`}
-          >
-            {deadlineInfo.tag}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {deadlineInfo?.tag && (
+            <span
+              className={`px-2 py-0.5 rounded-md border text-xs tabular-nums ${deadlineInfo.urgencyClass}`}
+            >
+              {deadlineInfo.tag}
+            </span>
+          )}
+
+          {onTeachTopic && (
+            <button
+              type="button"
+              onClick={() => onTeachTopic(objective.title)}
+              className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[11px] font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 transition-colors cursor-pointer"
+            >
+              <Brain className="w-3 h-3" />
+              <span>Ensinar (Feynman)</span>
+            </button>
+          )}
+        </div>
       </div>
     </article>
   );
