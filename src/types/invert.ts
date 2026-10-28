@@ -100,3 +100,4 @@ export const STUDENT_PERSONAS: Record<StudentPersonaId, StudentPersona> = {
     borderColorClass: 'border-emerald-200',
   },
 };
+

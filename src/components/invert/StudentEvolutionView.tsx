@@ -201,3 +201,4 @@ export const StudentEvolutionView: React.FC<StudentEvolutionViewProps> = ({
     </div>
   );
 };
+
